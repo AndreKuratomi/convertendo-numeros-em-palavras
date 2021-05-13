@@ -20,3 +20,21 @@ main#promenade h2 {
     font-size: small;
 }
 
+
+
+@media (min-width: 321px) {
+
+    main#promenade {
+        display: flex;
+        flex-direction: column;
+        align-items: initial;
+        justify-content: left;
+    }
+    main#promenade h1 {
+        font-size: xx-large;
+        margin-bottom: 0.5rem;
+    }
+    main#promenade h2 {
+        font-size: large;
+    }
+}

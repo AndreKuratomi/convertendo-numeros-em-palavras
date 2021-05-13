@@ -22,7 +22,7 @@ const numbersToWordsJR = () => {
             array.push(dezenas[1]);
         }
     }
-    // console.log(array);
+    console.log(array);
     return array;
 };
 numbersToWordsJR();
@@ -50,7 +50,6 @@ const numbersToWordsPLENO = () => {
         if (p === 19) {
             array.push(dezenas[1]);
         }
-        //
         if (p >= 20 && p <= 28) {
             array.push(dezenas[1] + ' ' + conector[0] + ' ' + unidades[p-20]);
         }
@@ -100,7 +99,7 @@ const numbersToWordsPLENO = () => {
             array.push(avulsos[0]);
         }
     }
-    // console.log(array);
+    console.log(array);
     return array;
 };
 numbersToWordsPLENO();
@@ -263,12 +262,12 @@ const numbersToWordsSENIOR = () => {
 numbersToWordsSENIOR();
 
 //DOM:
-const picturesAtAnExibition = () => {
-    const exibition = window.document.getElementById('promenade');
-    const picture1 = window.document.createElement('div');
-    picture1.className = 'junior';
-    const title 
-}
+// const picturesAtAnExibition = () => {
+//     const exibition = window.document.getElementById('promenade');
+//     const picture1 = window.document.createElement('div');
+//     picture1.className = 'junior';
+//     const title 
+// }
 
 // Instruções
 // Quando conseguir retornar todos os números com sucesso, use o JavaScript para exibi-los em uma página. 
