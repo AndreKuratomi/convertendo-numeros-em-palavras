@@ -11,13 +11,13 @@ const numbersToWordsJR = () => {
 
     for (let j = 0; j < 20; j++) {
         if (j <= 8) {
-            array.push(unidades[j]);
+            array.push(unidades[j] + ' ');
         }
         if (j === 9) {
-            array.push(dezenas[0]);
+            array.push(dezenas[0] + ' ');
         }
         if (j > 9 && j <= 18) {
-            array.push(primeiraDezena[j-10]);
+            array.push(primeiraDezena[j-10] + ' ');
         }
         if (j === 19) {
             array.push(pontuação[0]);
@@ -41,16 +41,16 @@ const numbersToWordsPLENO = () => {
     // array.push(numbersToWordsJR().join(','));
     for (p = 0; p < 100; p++) {
         if (p <= 8) {
-            array.push(unidades[p]);
+            array.push(unidades[p] + ' ');
         }
         if (p === 9) {
-            array.push(dezenas[0]);
+            array.push(dezenas[0] + ' ');
         }
         if (p > 9 && p <= 18) {
-            array.push(primeiraDezena[p-10]);
+            array.push(primeiraDezena[p-10] + ' ');
         }
         if (p === 19) {
-            array.push(dezenas[1]);
+            array.push(dezenas[1] + ' ');
         }
         if (p >= 20 && p <= 28) {
             array.push(dezenas[1] + ' ' + conector[0] + ' ' + unidades[p-20]);
@@ -122,16 +122,16 @@ const numbersToWordsSENIOR = () => {
         if (s0 === 0) {
             for (let s1 = 0; s1 < 100; s1++) {
                 if (s1 <= 8) {
-                    array.push(centenas[s0] + unidades[s1]);
+                    array.push(centenas[s0] + unidades[s1] + ' ');
                 }
                 if (s1 === 9) {
-                    array.push(centenas[s0] + dezenas[0]);
+                    array.push(centenas[s0] + dezenas[0] + ' ');
                 }
                 if (s1 > 9 && s1 <= 18) {
-                    array.push(centenas[s0] + primeiraDezena[s1-10]);
+                    array.push(centenas[s0] + primeiraDezena[s1-10] + ' ');
                 }
                 if (s1 === 19) {
-                    array.push(centenas[s0] + dezenas[1]);
+                    array.push(centenas[s0] + dezenas[1] + ' ');
                 }
                 if (s1 >= 20 && s1 <= 28) {
                     array.push(centenas[s0] + dezenas[1] + ' ' + conector[0] + ' ' + unidades[s1-20]);
