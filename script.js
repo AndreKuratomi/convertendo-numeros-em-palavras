@@ -5,8 +5,9 @@ const numbersToWordsJR = () => {
     let primeiraDezena = ['onze', 'doze', 'treze', 'quatorze', 'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove'];
     let dezenas = ['dez', 'vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa'];
     let centenas = ['cento', 'duzentos', 'trezentos', 'quatrocentos', 'quinhentos', 'seicentos', 'setecentos', 'oitocentos', 'novecentos'];
-    let conector = ['e'];
     let avulsos = ['cem', 'mil'];
+    let conector = ['e'];
+    let pontuação = ['vinte;', 'cem;', 'mil.'];
 
     for (let j = 0; j < 20; j++) {
         if (j <= 8) {
@@ -19,7 +20,7 @@ const numbersToWordsJR = () => {
             array.push(primeiraDezena[j-10]);
         }
         if (j === 19) {
-            array.push(dezenas[1]);
+            array.push(pontuação[0]);
         }
     }
     console.log(array);
@@ -33,8 +34,9 @@ const numbersToWordsPLENO = () => {
     let primeiraDezena = ['onze', 'doze', 'treze', 'quatorze', 'quinze', 'dezesseis', 'dezesete', 'dezoito', 'dezenove'];
     let dezenas = ['dez', 'vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa'];
     let centenas = ['cento', 'duzentos', 'trezentos', 'quatrocentos', 'quinhentos', 'seicentos', 'setecentos', 'oitocentos', 'novecentos'];
-    let conector = ['e'];
     let avulsos = ['cem', 'mil'];
+    let conector = ['e'];
+    let pontuação = ['vinte;', 'cem;', 'mil.'];
 
     // array.push(numbersToWordsJR().join(','));
     for (p = 0; p < 100; p++) {
@@ -96,7 +98,7 @@ const numbersToWordsPLENO = () => {
             array.push(dezenas[8] + ' ' + conector[0] + ' ' + unidades[p-90]);
         }
         if (p === 99) {
-            array.push(avulsos[0]);
+            array.push(pontuação[1]);
         }
     }
     console.log(array);
@@ -110,8 +112,9 @@ const numbersToWordsSENIOR = () => {
     let primeiraDezena = ['onze', 'doze', 'treze', 'quatorze', 'quinze', 'dezesseis', 'dezesete', 'dezoito', 'dezenove'];
     let dezenas = ['dez', 'vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa'];
     let centenas = ['', 'cento', 'duzentos', 'trezentos', 'quatrocentos', 'quinhentos', 'seicentos', 'setecentos', 'oitocentos', 'novecentos'];
-    let conector = ['e'];
     let avulsos = ['cem', 'mil'];
+    let conector = ['e'];
+    let pontuação = ['vinte;', 'cem;', 'mil.'];
 
     // array.push(numbersToWordsPLENO().join(','));
 
@@ -246,10 +249,10 @@ const numbersToWordsSENIOR = () => {
                 }
                 if (s0 === 9){
                     if (s1 === 99) {
-                        array.push(avulsos[1]);
+                        array.push(pontuação[2]);
                     }
                 }
-                if (s1 === 99) {
+                if (s1 === 99 && centenas[s0+1] !== undefined) {
                     array.push(centenas[s0+1]);
                 }
             }
@@ -262,16 +265,30 @@ const numbersToWordsSENIOR = () => {
 numbersToWordsSENIOR();
 
 //DOM:
-const picturesAtAnExibition = (título, functio) => {
+const titlesOfPictures = (num) => {
     const exibition = window.document.getElementById('promenade');
-    
-    const picture = window.document.createElement('div');
-    picture.className = 'quadro';
 
     const title = window.document.createElement('h3');
     title.className = 'nome';
-    title.innerText = `${título}`;
-    picture.appendChild(title);
+    if (num === 1) {
+        title.innerText = "Array de 1 a 20: ";
+    }
+    if (num === 2) {
+        title.innerText = "Array de 1 a 100: ";
+    }
+    if (num === 3) {
+        title.innerText = "Array de 1 a 1000: ";
+    }
+    exibition.appendChild(title);
+};
+
+const picturesAtAnExibition = (num, functio) => {
+    const exibition = window.document.getElementById('promenade');
+    
+    titlesOfPictures(num);
+
+    const picture = window.document.createElement('div');
+    picture.className = 'quadro';
 
     const textContent = `${functio}`;
     picture.innerText = textContent;
@@ -279,14 +296,8 @@ const picturesAtAnExibition = (título, functio) => {
     exibition.appendChild(picture);
 }
 
-const quadro1 = "Array de 1 a 20: ";
-let quadro2 = "Array de 1 a 100: ";
-let quadro3 = "Array de 1 a 1000: ";
 
-picturesAtAnExibition(quadro1, numbersToWordsJR());
-picturesAtAnExibition(quadro2, numbersToWordsPLENO());
-picturesAtAnExibition(quadro3, numbersToWordsSENIOR());
+picturesAtAnExibition(1, numbersToWordsJR());
+picturesAtAnExibition(2, numbersToWordsPLENO());
+picturesAtAnExibition(3, numbersToWordsSENIOR());
 
-// Instruções
-// Quando conseguir retornar todos os números com sucesso, use o JavaScript para exibi-los em uma página. 
-// Escreva uma função de ajuda separada que exibe os resultados ao chamar numbersToWords na página.
