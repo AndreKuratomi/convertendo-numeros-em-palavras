@@ -262,12 +262,30 @@ const numbersToWordsSENIOR = () => {
 numbersToWordsSENIOR();
 
 //DOM:
-// const picturesAtAnExibition = () => {
-//     const exibition = window.document.getElementById('promenade');
-//     const picture1 = window.document.createElement('div');
-//     picture1.className = 'junior';
-//     const title 
-// }
+const picturesAtAnExibition = (título, functio) => {
+    const exibition = window.document.getElementById('promenade');
+    
+    const picture = window.document.createElement('div');
+    picture.className = 'quadro';
+
+    const title = window.document.createElement('h3');
+    title.className = 'nome';
+    title.innerText = `${título}`;
+    picture.appendChild(title);
+
+    const textContent = `${functio}`;
+    picture.innerText = textContent;
+
+    exibition.appendChild(picture);
+}
+
+const quadro1 = "Array de 1 a 20: ";
+let quadro2 = "Array de 1 a 100: ";
+let quadro3 = "Array de 1 a 1000: ";
+
+picturesAtAnExibition(quadro1, numbersToWordsJR());
+picturesAtAnExibition(quadro2, numbersToWordsPLENO());
+picturesAtAnExibition(quadro3, numbersToWordsSENIOR());
 
 // Instruções
 // Quando conseguir retornar todos os números com sucesso, use o JavaScript para exibi-los em uma página. 
