@@ -1,0 +1,22 @@
+html, body, main, h1, h2 {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 1rem;
+}
+main#promenade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main#promenade h1 {
+    font-size: medium;
+    margin-bottom: 0.5rem;
+}
+main#promenade h2 {
+    font-size: small;
+}
+
