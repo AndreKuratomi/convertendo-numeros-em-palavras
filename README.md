@@ -1,5 +1,4 @@
 # convertendo-numeros-em-palavras
-# TORRE-DE-HANOI
 
 - [Descrição](#descrição)
 - [Instalação](#instalação)
